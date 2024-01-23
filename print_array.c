@@ -11,13 +11,16 @@ void print_array(const int *array, size_t size)
 {
 	size_t i;
 
-	i = 0;
-	while (array && i < size)
+	if (array == NULL || size == 0)
 	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", array[i]);
-		++i;
+		printf("\n");
+		return;
+	}
+	printf("%d", array[0]);
+
+	for (i = 1; i < size; i++)
+	{
+		printf(", %d", array[i]);
 	}
 	printf("\n");
 }
